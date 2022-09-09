@@ -1,0 +1,20 @@
+1.) you type in an address on personal computer
+-the request is sent to the server which is the URL
+
+2.) server responds to the request 
+
+Where and how do website come into play?
+*front end (this is what the client/user sees)
+-Webpages are made from HTML (structuring) and CSS (stylizing)
+-Javascript allows for interaction
+
+*back end (this is what the server does)
+-the code that is done to the information held
+by the front page
+-these are generally scripts used to process 
+the information
+-these include databases
+-ex. importing and exporting files
+
+You should have a .css file for all of your html files so that 
+you can have an organized and set style
