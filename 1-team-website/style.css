@@ -39,19 +39,66 @@ table {
 }
 
 .header{
-  min-height: 100vh;
+  min-height: 80vh;
   width: 100%;
-  background-image: linear-gradient(rgba(6, 6, 214, 0), rgba(6,6,214,0)), url(images/HHS_Soccer_Team.png);
+  background-image: linear-gradient(rgba(6, 6, 214, 0.25), rgba(6,6,214,0.25)), url('images/HHS_Soccer_Team.png');
   background-position: center;
   background-size: cover;
   position: relative;
 }
 
 .site_name{
+  position: absolute;
+  top: 75px;
   margin-bottom: .3em;
   text-align: left;
   color: #fff;
   font-family: 'Lato', sans-serif;
-  font-size: 200px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 150px;
+  
 
+}
+
+.site_name p{
+  padding-bottom: 50px;
+  padding-left: 50px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10%, 6%;
+  align-items: center;
+}
+
+.nav-links{
+  flex: 1;
+  text-align: center;
+}
+.nav-links ul li{
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  padding-top: 24px;
+}
+
+.nav-links ul li a{
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  text-decoration: none;
+  border: 2px solid #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  cursor: pointer;
+}
+
+.nav-links:hover a {
+  border: 2px solid #fff;
+  background:rgba(6, 6, 214, 0.5);
+  transition: 0.5s;
 }
