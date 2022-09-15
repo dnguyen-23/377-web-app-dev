@@ -1,12 +1,11 @@
-h1 {
+ h1 {
     text-align: center;
     font-size: 1em;
     color: #009;
     margin-bottom: .3em;
-    text-decoration: underline;
   }
 
-  
+ /* 
 table {
     margin: .3em;
     width: 290px;
@@ -31,5 +30,28 @@ table {
   
   .centerCell {
     text-align: center;
-  }
+  } */
 
+  /*  */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(6, 6, 214, 0), rgba(6,6,214,0)), url(images/HHS_Soccer_Team.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.site_name{
+  margin-bottom: .3em;
+  text-align: left;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 200px;
+
+}
