@@ -2,21 +2,46 @@
 
 <link href="style.css" rel="stylesheet">
 <html lang = "en">
-    <body>
-        <h1><a href="index.html">HHS Hawks Soccer</a></h1>
-    </body>
+    <!-- put link statements in <head> tag -->
+    <head>
+        <!-- meta stands for metadata, this is info abt the html doc -->
+        <!-- viewport is the area of window that can be seen  -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+        <link href="style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet"> 
 
-    <body>
-        <p><a href="schedule-calendar.html">Our Schedule</a></p>
-        <p><a href="roster.html">Our Roster</a></p>
-        <p><a href="media-and-flex.html">Flexing our highlights</a>
-    </body>
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">  -->
+    </head>
 
-    <title>
-        Our Schedule:
-    </title>
+    
     <body>
         
+        <div class="schedule-header">
+            <nav>
+                <span>
+                    <a href="index.html"><img src="images/hawk-wings.png" position="fixed" height="100px" ></a>
+                </span>
+                
+                <div class="nav-links">
+                    <ul>
+                        <li><a href='index.html'>HOME</a></li>
+                        <li><a href='schedule-calendar.html'>OUR SCHEDULE</a></li>
+                        <li><a href='roster.html'>OUR ROSTER</a></li>
+                        <li><a href='highlights.html'>OUR HIGHLIGHTS</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            
+
+            <h1 id="top-heading">OUR</h1>
+            <h1>&nbsp &nbsp &nbsp SCHEDULE</h1>
+        </div>
+
         <table style = "width:100%">
             <tr>
                 <th>Date</th>
