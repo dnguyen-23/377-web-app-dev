@@ -14,18 +14,26 @@
         </h1>
         <script src="scripts.js"></script>
         <!-- Display options for which equations to use -->
-        <div class = "equation_buttons">
-            <button type="button" onclick="display('Quadratic')">Quadratic</button>
-            <button type="button" onclick="display('Sphere Volume')">Sphere Volume</button>
-            <button type="button" onclick="display('Sphere Surface Area')">Sphere Surface Area</button>
+        <div class = "center_container">
+
+            <!-- Selection of buttons for diff equations avail. -->
+            <div class = "equation_buttons">
+                <button type="button" onclick="display('Quadratic')">Quadratic</button>
+                <button type="button" onclick="display('Sphere Volume')">Sphere Volume</button>
+                <button type="button" onclick="display('Sphere Surface Area')">Sphere Surface Area</button>
+            </div>
+
+            <!-- Empty form that will be used to hold the input fields depending on which equation was selected -->
+            <div class = "inputs">
+                <form id="input_form">
+                </form>
+            </div>
+
+            <!-- The solve button -->
+            <button class = "solve-button" type="button" onclick="solve()" margin="10px 4px">Solve</button>
         </div>
 
-        <div class = "inputs">
-            <form id="input_form">
-            </form>
-        </div>
 
-    <button class = "Solve button" type="button" onclick="solve()">Solve</button>
 
     <h1 id="result"></h1>
     </body>

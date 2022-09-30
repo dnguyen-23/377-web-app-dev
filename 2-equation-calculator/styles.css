@@ -1,11 +1,12 @@
 h1 {
     text-align: center;
-    color: red;
+    color: black;
     margin-bottom: .3em;
-    width: 100%;
-    /* font-family: 'Lato', sans-serif;
+    
+    width: auto;
+    font-family: 'Lato', sans-serif;
     font-family: 'Noto Sans Mono', monospace;
-    font-family: 'Roboto', sans-serif; */
+    font-family: 'Roboto', sans-serif;
     font-size: 150px;
     border: 10px solid black;
     /* padding: 25px; */
@@ -13,16 +14,38 @@ h1 {
 
 }
 
-.equation_buttons {
-    margin-right: auto;
-    margin-left: auto;
-    width: 50%;
+.center_container {
+    text-align: center;
+}
+
+.equation_buttons button {
+    text-align: center;
+    background-color: #555555;
+    border: none;
+    width: 300px;
+    height: auto;
+    color: white;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px; 
+    margin-right: 10px;
+}
+
+.solve-button {
+    text-align: center;
+    background-color: lightgreen;
+    border: none;
+    width: 300px;
+    height: auto;
+    color: white;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px; 
+    margin-top: 10px;
 }
 
 .inputs {
-    margin-right: auto;
-    margin-left: auto;
-    width: 50%;
+    text-align: center;
     border: 3px lightgreen;
-    padding: 10px;
+    padding: 50px 50px;
 }

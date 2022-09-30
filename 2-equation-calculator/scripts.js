@@ -11,10 +11,14 @@ function quadraticSolver() {
 
     var html = "Your result: ";
 
-    if (resultNeg != resultPos) {
-        html += resultPos + " and " + resultNeg;
+    if (isNaN(resultPos) && isNaN(resultNeg)) {
+        html += "No real solutions";
     } else {
-        html += resultPos;
+        if (resultNeg != resultPos) {
+            html += resultPos + " and " + resultNeg;
+        } else {
+            html += resultPos;
+        }
     }
 
     document.getElementById("result").innerHTML = html;
@@ -40,12 +44,12 @@ function display(equationType) {
     var html = "";
     PROBLEM_TYPE = equationType;
     if (equationType == "Quadratic") {
-        html = "<input type='number' id='a' name'a' size='5'>Enter A</input>" +
-                    "<input type='number' id='b' name'b' size='5'>Enter B</input>" +
-                    "<input type='number' id='c' name'c' size='5'>Enter C</input>";
+        html = "<input type='number' id='a' name'a' size='5' placeholder='Enter A'>" +
+                    "<input type='number' id='b' name'b' size='5' placeholder='Enter B'>" +
+                    "<input type='number' id='c' name'c' size='5' placeholder='Enter C'>";
         
     } else if (equationType == "Sphere Volume" || equationType == "Sphere Surface Area") {
-        html = "<input type='number' id='radius' name'radius' size='5'>Enter a radius</input>";
+        html = "<input type='number' id='radius' name'radius' size='5' placeholder='Enter a radius'>";
     }
     document.getElementById("input_form").innerHTML = html;
 }
