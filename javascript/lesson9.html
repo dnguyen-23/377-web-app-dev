@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <ul id="car_names">
+
+        </ul>
+    </body>
+
+    <script>
+        class Car {
+            constructor(name, mpgs, accel, top_speed) {
+                this.name = name;
+                this.mpgs = mpgs;
+                this.accel = accel;
+                this.top_speed = top_speed;
+            }
+        }
+
+        function makeCar(make, model, mpg, color) {
+            var carObject = {
+                make: make,
+                model: model,
+                mpg: mpg,
+                color: color,
+                displayName: function() {
+                    return make + model;
+                }
+            }
+        }
+        // var carObject = {
+        //     make: 'BMW',
+        //     model: 'M3',
+        //     mpg: 23,
+        //     color: 'white'
+        // }
+        //script must take place after the html stuff in order for the javasciprt to write to the html code
+        function tableElementer(attrib) {
+            var table_el = "<td>" + attrib + "</td>";
+            return table_el
+        }
+        window.onload = function() {
+            // var cars = ['M3', 'Aston Martin', 'Mazda RX-7', "Chevy Camaro "];
+            // var mpgs = [23, 12, 25, 27, 19, 400, 11, 17];
+            let m3 = new Car("BMW M3", 23, 1234, 1234);
+            let a_m = new Car("Aston Martin Phantom", 23, 1234, 1234);
+            let mazda_RX_7 = new Car("RX-7", 23, 1234, 1234);
+            let chevy_camaro = new Car("Chevy Camaro", 23, 1234, 1234);
+            var car_list = [m3, a_m, mazda_RX_7, chevy_camaro];
+            var html = "<table>";
+            
+            car_list.forEach(car => {
+                html += "<tr>" + tableElementer(car.name) + tableElementer(car.mpgs) + tableElementer(car.accel) + tableElementer(car.top_speed) + "</tr>";
+            });
+            html += "</table>";
+            
+            console.log(html);
+            document.getElementById("car_names").innerHTML = html;
+        }
+    </script>
+</html>

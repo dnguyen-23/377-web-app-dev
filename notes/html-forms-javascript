@@ -1,0 +1,12 @@
+Elements of a form
+-designing the form page
+
+Whenever you want a text box for user input, you want a form
+<form> </form>
+
+-inside the form, you use the <input> tag to get user input 
+"type" is an attribute that determines what type of user input box you want
+
+DOM: document object model (a type of structure in memory)
+-when rendering the page, a model of the document is built in memory
+-each element = an object

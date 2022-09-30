@@ -1,0 +1,13 @@
+4 main ways to expres position
+
+sticky: can be positioned anywhere however when scrolling down, 
+    the "sticky" element will stick to the top search bar
+
+relative: position is with respect to the previous element
+    -generally used for child elements to reference off of for position
+
+absolute: position is with respect to the previous relative element
+
+fixed: fixed relative to the current screen, not the html element
+
+*typing height: #vh will allow you to scroll if the number is big enough

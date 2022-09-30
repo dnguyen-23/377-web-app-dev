@@ -1,0 +1,38 @@
+<DOCTYPE html>
+<html lang="en">
+    <h1>My first form</h1>
+
+    <script>
+        function helloWorld() {
+            //document is the object that represents the entire html file
+            //getElementById will return an object, 
+            var name = document.getElementById("name").value;
+            var hobby = document.getElementById("hobby").value;
+            var response = "Hello " + name + ", I like " + hobby + " too!";
+            // alert(response); this is annoying to do
+
+            //the more effective way of displaying something is updating the DOM: the document object model
+            //which represents the file itself
+            document.getElementById("greeting").innerHTML = "<br>" + response;
+
+        }
+    </script>
+
+
+
+    <form>
+        Please enter your name<br>
+        <input type="text" placeholder="Enter your name" size="50", id="name">
+        <br>
+        <br>
+        <hr>
+        <br>
+        What do you like to do in your spare time? <br>
+        <input type="text" placeholder="Please enter a hobby?" size="50" id="hobby">
+
+        <br><br>
+        <input type="button" value="click me" onclick="helloWorld()"> 
+
+        <h2 id="greeting"></h2>
+    </form>
+</html>

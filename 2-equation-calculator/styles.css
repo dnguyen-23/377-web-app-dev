@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+    color: red;
+    margin-bottom: .3em;
+    width: 100%;
+    /* font-family: 'Lato', sans-serif;
+    font-family: 'Noto Sans Mono', monospace;
+    font-family: 'Roboto', sans-serif; */
+    font-size: 150px;
+    border: 10px solid black;
+    /* padding: 25px; */
+    
+
+}
+
+.equation_buttons {
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}
+
+.inputs {
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    border: 3px lightgreen;
+    padding: 10px;
+}

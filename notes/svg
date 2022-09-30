@@ -1,0 +1,7 @@
+svg scalable vector graphics
+
+Traditional "Raster graphics" = pixelated graphics
+
+SVGs -> use vectors/lines that are used to portray images, even when you shrink in, 
+you are still looking at the same shape
+-doesn't look at what bits make up the picture; looks at what is the picture you want to draw
