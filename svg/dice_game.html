@@ -1,0 +1,177 @@
+<DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            var userInput;
+            var FIRST_TOTAL = 0;
+            var FIRST_ROLL = true;
+            var CUR_TOTAL = 0;
+            var balance = 100;
+            var bet_value = 0;
+            $(document).ready(function() {
+                $("#balance").html("Here is your balance: $" + balance);
+                askBet();
+            });
+
+            function askBet() {
+                if (balance == 0) {
+                    while (true) {
+                        alert("you goofed up: you're broke");
+                    }
+                } else {
+                    userInput = prompt("Enter an amount to bet: ", "ooga booga");
+                    bet_value = parseInt(userInput);
+                    while (bet_value > balance || isNaN(bet_value)) {
+                        if (isNaN(bet_value)) {
+                            alert("enter a bet not the alfabet")
+                        } else {
+                            alert("y r u over betting");
+                        }
+
+                        userInput = prompt("Enter an amount to bet: ", "ooga booga");
+                        bet_value = parseInt(userInput);
+                    }
+                    $("#betAmt").html("You are betting this amount: $" + bet_value);
+                }
+                $('#first_roll').html('&nbsp');
+                $('#result').html('&nbsp');
+            }
+
+            function rollDice(){
+                $(".pip").css("visibility", "hidden");
+                
+                CUR_TOTAL = 0;
+                rollDie(1);
+                rollDie(2);
+                
+                if (FIRST_ROLL) {
+                    FIRST_ROLL = false;
+                    if (CUR_TOTAL == 7 || CUR_TOTAL == 11) {
+                        $("#result").html("You win!");
+                        balance += bet_value;
+                        $("#balance").html("This is your balance: $" + balance);
+                        FIRST_ROLL = true;
+                        FIRST_TOTAL = 0;
+                        CUR_TOTAL = 0;
+                        askBet();                        
+                    } else if (CUR_TOTAL == 2 || CUR_TOTAL == 3 || CUR_TOTAL == 12) {
+                        $("#result").html("You lose!");
+                        balance -= bet_value;
+                        $("#balance").html("This is your balance: $" + balance);
+                        FIRST_ROLL = true;
+                        FIRST_TOTAL = 0;
+                        CUR_TOTAL = 0;
+                        askBet();
+                    } else {
+                        FIRST_TOTAL = CUR_TOTAL;
+                        $('#first_roll').html('This is your target roll: ' + FIRST_TOTAL);
+                        
+                    }
+                } else {
+                    if (FIRST_TOTAL == CUR_TOTAL) {
+                        $('#result').html('You win!');
+                        balance += bet_value;
+                        $("#balance").html("This is your balance: $" + balance);
+                        FIRST_ROLL = true;
+                        FIRST_TOTAL = 0;
+                        CUR_TOTAL = 0;
+                        askBet();
+                    } else if (CUR_TOTAL == 7) {
+                        $('#result').html('You lose!');
+                        balance -= bet_value;
+                        $("#balance").html("This is your balance: $" + balance);
+                        FIRST_ROLL = true;
+                        FIRST_TOTAL = 0;
+                        CUR_TOTAL = 0;
+                        askBet();
+                    }
+                }
+            }
+
+            function rollDie(dieNum) {
+                var number = Math.ceil(((Math.random()) * 6));
+                if (number == 1) {
+                    $("#center" + dieNum).css("visibility", "visible");
+                } else if (number == 2) {
+                    $("#top_right" + dieNum).css("visibility", "visible");
+                    $("#bot_left" + dieNum).css("visibility", "visible");
+                } else if (number == 3) {
+                    $("#top_right" + dieNum).css("visibility", "visible");
+                    $("#center" + dieNum).css("visibility", "visible");
+                    $("#bot_left" + dieNum).css("visibility", "visible");
+                } else if (number == 4) {
+                    $("#top_right" + dieNum).css("visibility", "visible");
+                    $("#bot_left" + dieNum).css("visibility", "visible");
+                    $("#top_left" + dieNum).css("visibility", "visible");
+                    $("#bot_right" + dieNum).css("visibility", "visible");
+                } else if (number == 5) {
+                    $("#top_right" + dieNum).css("visibility", "visible");
+                    $("#bot_left" + dieNum).css("visibility", "visible");
+                    $("#top_left" + dieNum).css("visibility", "visible");
+                    $("#bot_right" + dieNum).css("visibility", "visible");
+                    $("#center" + dieNum).css("visibility", "visible");
+                } else if (number == 6) {
+                    $("#top_right" + dieNum).css("visibility", "visible");
+                    $("#bot_left" + dieNum).css("visibility", "visible");
+                    $("#top_left" + dieNum).css("visibility", "visible");
+                    $("#bot_right" + dieNum).css("visibility", "visible");
+                    $("#mid_left" + dieNum).css("visibility", "visible");
+                    $("#mid_right" + dieNum).css("visibility", "visible");
+                }
+                CUR_TOTAL += number;
+
+                // 7 or 11 you win
+                // 2, 3, 12 you lose
+                // next roll, if you roll the previous you win
+
+            }
+
+            
+        </script>
+    </head>
+    
+    <!-- <circle cx="160" cy="40" r="20" fill="black"/>
+    <circle cx="40" cy="160" r="20" fill="black"/>
+    
+    <circle cx="40" cy="100" r="20" fill="black"/>
+    <circle cx="100" cy="100" r="20" fill="black"/>
+    <circle cx="160" cy="100" r="20" fill="black"/>
+
+    <circle cx="40" cy="40" r="20" fill="black"/>
+    <circle cx="160" cy="160" r="20" fill="black"/> -->
+
+    <!-- the difference between <symbol> and <g> is that <symbol> starts out hidden when defined, <g> starts out appeared -->
+    <body>
+        <svg width="1000" height="500">
+            <g id="die1">
+                <rect x="0" y="0" width="200" height="200" fill="green"/>
+                <circle id="bot_left1" class="pip" cx="40" cy="160" r="20" fill="black"/>
+                <circle id="top_right1" class="pip"  cx="160" cy="40" r="20" fill="black"/>
+                <circle id="top_left1" class="pip"  cx="40" cy="40" r="20" fill="black"/>
+                <circle id="bot_right1" class="pip"  cx="160" cy="160" r="20" fill="black"/>
+                <circle id="center1" class="pip"  cx="100" cy="100" r="20" fill="black" visibility="hidden"/>
+                <circle id="mid_left1" class="pip"  cx="40" cy="100" r="20" fill="black"/>
+                <circle id="mid_right1" class="pip"  cx="160" cy="100" r="20" fill="black"/>
+            </g>
+
+            <g id="die2">
+                <rect x="500" y="0" width="200" height="200" fill="green"/>
+                <circle id="bot_left2" class="pip" cx="540" cy="160" r="20" fill="black"/>
+                <circle id="top_right2" class="pip"  cx="660" cy="40" r="20" fill="black"/>
+                <circle id="top_left2" class="pip"  cx="540" cy="40" r="20" fill="black"/>
+                <circle id="bot_right2" class="pip"  cx="660" cy="160" r="20" fill="black"/>
+                <circle id="center2" class="pip"  cx="600" cy="100" r="20" fill="black" visibility="hidden"/>
+                <circle id="mid_left2" class="pip"  cx="540" cy="100" r="20" fill="black"/>
+                <circle id="mid_right2" class="pip"  cx="660" cy="100" r="20" fill="black"/>
+            </g>
+            <rect onclick="rollDice()" x="250" y="300" width="100" height="80" fill="grey">
+        </svg>     
+
+        <h1 id="balance"></h1>
+        <h1 id="betAmt"></h1>
+        <h1 id="first_roll">&nbsp</h1>
+        <h1 id="result"></h1>
+    </body>
+    
+</html>

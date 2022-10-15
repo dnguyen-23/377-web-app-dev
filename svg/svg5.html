@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVG Lesson 5</title>
+    </head>
+
+    <body>
+
+        <h1>SVG Lesson 5</h1>
+
+        <svg width="500" height="500">
+
+            <path d="M 10,10 H 50 V 50 H 10 L 10 10" fill="blue" />
+            <!-- upper case H and L tell you to go to a certain x and y coordinate -->
+            <!-- uppercase means absolute, with respect to the origin -->
+
+            <!-- lower case h and l tell you to change position by a certain amount -->
+            <!-- lowercase means relative, with respect to the current coordinate -->
+            <path d="M 10,100 C 30,200 90,200 110,100" stroke="red" fill="transparent" />
+            <path d="M 100, 10 h 50 v 50 L 100 10" fill="green" />
+        </svg>
+
+    </body>
+</html>

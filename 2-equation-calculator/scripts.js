@@ -11,7 +11,7 @@ function quadraticSolver() {
 
     var html = "Your result: ";
 
-    if (isNaN(resultPos) && isNaN(resultNeg)) {
+    if (isNaN(resultPos) && isNaN(resultNeg)) { //if disxriminant less than 0
         html += "No real solutions";
     } else {
         if (resultNeg != resultPos) {

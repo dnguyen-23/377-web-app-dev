@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVG Lesson 3</title>
+    </head>
+
+    <body>
+
+        <h1>SVG Lesson 3</h1>
+
+        <svg width="1000" height="1000">
+            <!-- This is a simple rectangle with a default fill of black -->
+            <rect width="200" height="100" />
+
+            <rect width="200" height="100" transform="translate(210)" fill="red"/>
+            <!-- This is a more complex rectangle with a blue fill and red border -->
+            
+            <rect width="200" height="100" transform="translate(0, 110)" fill="green"/>
+
+            <rect width="200" height="100" transform="translate(210, 110)" fill="navajowhite"/>
+            
+            <rect width="200" height="100" transform="translate(500, 500) scale(0.5 0.5)" fill="black"/>
+            
+            <!-- rotation is set about the origin at default -->
+            <rect width="50" height="80" x="0" y="200"/>
+            <rect width="50" height="80" x="0" y="200" fill="poop" transform="rotate(-45)"/>
+            <rect width="50" height="80" x="0" y="200" fill="orange" transform="rotate(-45 25, 240)"/>
+
+            <rect width="50" height="80" x="500" y="200" fill="red" transform="skew()"/>
+        </svg>
+
+    </body>
+</html>
