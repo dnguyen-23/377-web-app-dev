@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="scripts.js"></script>
+        <link href="styles.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <!-- These are going to be the arrows that will be clicked -->
+        <!-- buttons -->
+        
+        
+        <h1 style="text-align:center">CONNECT 4 (feat. Max and Adam)</h1>
+        <svg width="780" height="100">
+            <rect id="col1" x="10" y="0" width="100" height="100" fill="gray" text="col1" onclick="enterTkn(1)"/>
+            <text x="20" y="33" font-family="Verdana" font-size="35" fill="black">Col1</text>
+            <rect id="col2" x="120" y="0" width="100" height="100" fill="gray" onclick="enterTkn(2)"/>
+            <text x="130" y="33" font-family="Verdana" font-size="35" fill="black">Col2</text>
+            <rect id="col3" x="230" y="0" width="100" height="100" fill="gray" onclick="enterTkn(3)"/>
+            <text x="240" y="33" font-family="Verdana" font-size="35" fill="black">Col3</text>
+            <rect id="col4" x="340" y="0" width="100" height="100" fill="gray" onclick="enterTkn(4)"/>
+            <text x="350" y="33" font-family="Verdana" font-size="35" fill="black">Col4</text>
+            <rect id="col5" x="450" y="0" width="100" height="100" fill="gray" onclick="enterTkn(5)"/>
+            <text x="460" y="33" font-family="Verdana" font-size="35" fill="black">Col5</text>
+            <rect id="col6" x="560" y="0" width="100" height="100" fill="gray" onclick="enterTkn(6)"/>
+            <text x="570" y="33" font-family="Verdana" font-size="35" fill="black">Col6</text>
+            <rect id="col7" x="670" y="0" width="100" height="100" fill="gray" onclick="enterTkn(7)"/>
+            <text x="680" y="33" font-family="Verdana" font-size="35" fill="black">Col7</text>
+        </svg>
+        <br>
+        <svg id="board" width="780" height="660"> 
+            
+            <!-- <circle cx="0" cy="0" r="10" visibility="visible"></circle> -->
+            <!-- <image href="pics/adamC4Piece.jpg" height="100" width="100" x="100" y="600"/>
+            <image href="pics/adamC4Piece.jpg" width="100" height="100" x="10" y="560"> -->
+
+            <!-- need to add buttons to  -->
+        </svg>
+        <h2 id="result"></h2>
+    </body>
+</html>
