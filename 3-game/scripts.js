@@ -10,43 +10,45 @@ let board = [[0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0]];
 let maxRows = 6;
-
+let win = false;
 //Depending on which svg was pressed, a token will be entered in the specified col
 //colNum is the actual column number, not the index value 
 function enterTkn(colNum) {
     //Col num will tell where to set the x position
-    board[colNum - 1][lastOpenRow[colNum - 1]] = playerTurn;
-    // printBoard();
-    if (lastOpenRow[colNum -1] == maxRows) { //meaning that the current column is filled
-        console.log("full column");
-    } else if (playerTurn == 1) {
-        xCoord = (colNum - 1) * 100 + (10 * colNum);
-        yCoord = 560 - lastOpenRow[colNum -1] * 100 - 50;
-        var image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-        image.setAttribute('href', 'pics/adamC4Piece.jpg');
-        image.setAttribute('width', '100');
-        image.setAttribute('height', '100');
-        image.setAttribute('x', String(xCoord));
-        image.setAttribute('y', String(yCoord));
-        image.setAttribute('visibility', 'visible');
-        $("#board").append(image);
-        lastOpenRow[colNum - 1] += 1;
-        playerTurn = 2;
-        console.log("player 1 placed: " + $("#board").html);
-    } else if (playerTurn == 2) {
-        xCoord = (colNum - 1) * 100 + (10 * colNum);
-        yCoord = 560 - lastOpenRow[colNum -1] * 100 - 50;
-        var image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-        image.setAttribute('href', 'pics/maxC4Piece.jpg');
-        image.setAttribute('width', '100');
-        image.setAttribute('height', '100');
-        image.setAttribute('x', String(xCoord));
-        image.setAttribute('y', String(yCoord));
-        image.setAttribute('visibility', 'visible');
-        $("#board").append(image);
-        lastOpenRow[colNum - 1] += 1;
-        playerTurn = 1;
-        console.log("player 2 placed: " + $("#board").html);
+    if (!win) {
+        board[colNum - 1][lastOpenRow[colNum - 1]] = playerTurn;
+        // printBoard();
+        if (lastOpenRow[colNum -1] == maxRows) { //meaning that the current column is filled
+            console.log("full column");
+        } else if (playerTurn == 1) {
+            xCoord = (colNum - 1) * 100 + (10 * colNum);
+            yCoord = 560 - lastOpenRow[colNum -1] * 100 - 50;
+            let image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+            image.setAttribute('href', 'pics/adamC4Piece.jpg');
+            image.setAttribute('width', '100');
+            image.setAttribute('height', '100');
+            image.setAttribute('x', String(xCoord));
+            image.setAttribute('y', String(yCoord));
+            image.setAttribute('visibility', 'visible');
+            $("#board").append(image);
+            lastOpenRow[colNum - 1] += 1;
+            playerTurn = 2;
+            console.log("player 1 placed: " + $("#board").html);
+        } else if (playerTurn == 2) {
+            xCoord = (colNum - 1) * 100 + (10 * colNum);
+            yCoord = 560 - lastOpenRow[colNum -1] * 100 - 50;
+            let image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+            image.setAttribute('href', 'pics/maxC4Piece.jpg');
+            image.setAttribute('width', '100');
+            image.setAttribute('height', '100');
+            image.setAttribute('x', String(xCoord));
+            image.setAttribute('y', String(yCoord));
+            image.setAttribute('visibility', 'visible');
+            $("#board").append(image);
+            lastOpenRow[colNum - 1] += 1;
+            playerTurn = 1;
+            console.log("player 2 placed: " + $("#board").html);
+        }
     }
 
     checkWin();
@@ -58,10 +60,9 @@ function printBoard() {
 
 function checkWin() {
     // check the rows; check up to column 3 (index @ 4)
-    var win = false;
 
-    for (var startCol = 0; startCol < 4; startCol++) {
-        for (var startRow = 0; startRow < maxRows; startRow++) {
+    for (let startCol = 0; startCol < 4; startCol++) {
+        for (let startRow = 0; startRow < maxRows; startRow++) {
             if (checkRow(startRow, startCol) == true) {
                 win = true;
                 console.log("WIN BY ROW: " + startRow);
@@ -70,16 +71,16 @@ function checkWin() {
         }
     }
     // check the col
-    for (var startCol = 0; startCol < 7; startCol++) {
-        for (var startRow = 0; startRow < 2; startRow++) {
+    for (let startCol = 0; startCol < 7; startCol++) {
+        for (let startRow = 0; startRow < 2; startRow++) {
             if (checkCol(startRow, startCol) == true) {
                 win = true;
                 console.log("WIN BY COL: " + startCol);
             }
         }
     }
-    for (var startCol = 0; startCol < 4; startCol++) {
-        for (var startRow = 3; startRow < maxRows; startRow++) {
+    for (let startCol = 0; startCol < 4; startCol++) {
+        for (let startRow = 3; startRow < maxRows; startRow++) {
             if (checkTLBR(startRow, startCol) == true) {
                 win = true;
                 console.log("WIN BY DIAGONAL TLBR" + startRow);
@@ -87,8 +88,8 @@ function checkWin() {
 
         }
     }
-    for (var startCol = 0; startCol < 4; startCol++) {
-        for (var startRow = 0; startRow < 3; startRow++) {
+    for (let startCol = 0; startCol < 4; startCol++) {
+        for (let startRow = 0; startRow < 3; startRow++) {
             if (checkBLTR(startRow, startCol) == true) {
                 win = true;
                 console.log("WIN BY DIAGONAL BLTR");
@@ -105,9 +106,9 @@ function checkWin() {
 
 //Each row in the matrix represents the column
 function checkRow(row, col) {
-    var streak = 0;
-    for (var i = 0; i < 4; i++) {
-        var curTkn = board[col + i][row];
+    let streak = 0;
+    for (let i = 0; i < 4; i++) {
+        let curTkn = board[col + i][row];
         if (board[col][row] == curTkn && board[col][row] != 0) {
             streak++;
         } else {
@@ -116,17 +117,17 @@ function checkRow(row, col) {
     }
 
     if (streak == 4) {
-        return true;
         playerWin(board[col][row]);
+        return true;
     } else {
         return false;
     }
 }
 
 function checkCol(row, col) {
-    var streak = 0;
-    for (var i = 0; i < 4; i++) {
-        var curTkn = board[col][row + i];
+    let streak = 0;
+    for (let i = 0; i < 4; i++) {
+        let curTkn = board[col][row + i];
         if (board[col][row] == curTkn && board[col][row] != 0) {
             streak++;
         } else {
@@ -135,17 +136,17 @@ function checkCol(row, col) {
     }
 
     if (streak == 4) {
-        return true;
         playerWin(board[col][row]);
+        return true;
     } else {
         return false;
     }
 }
 
 function checkBLTR(row, col) {
-    var streak = 0;
-    for (var i = 0; i < 4; i++) {
-        var curTkn = board[col + i][row + i];
+    let streak = 0;
+    for (let i = 0; i < 4; i++) {
+        let curTkn = board[col + i][row + i];
         if (board[col][row] == curTkn && board[col][row] != 0) {
             streak++;
         } else {
@@ -154,8 +155,8 @@ function checkBLTR(row, col) {
     }
 
     if (streak == 4) {
-        return true;
         playerWin(board[col][row]);
+        return true;
     } else {
         return false;
     }
@@ -163,9 +164,9 @@ function checkBLTR(row, col) {
 }
 
 function checkTLBR(row, col) {
-    var streak = 0;
-    for (var i = 0; i < 4; i++) {
-        var curTkn = board[col + i][row - i];
+    let streak = 0;
+    for (let i = 0; i < 4; i++) {
+        let curTkn = board[col + i][row - i];
         if (board[col][row] == curTkn && board[col][row] != 0) {
             streak++;
         } else {
@@ -174,19 +175,19 @@ function checkTLBR(row, col) {
     }
 
     if (streak == 4) {
-        return true;
         playerWin(board[col][row]);
+        return true;
     } else {
         return false;
     }
 }
 
 function playerWin(playerNum) {
-    player = "Adam";
+    let player = "Adam";
     if (playerNum == 2) {
         player = "Max";
     }
-    $("#result").innerHTML("( ._.) " + player + " WON (._. )")
+    $("#result").html("( ._.) " + player + " WON (._. )")
 }
 // create function to check diagonals
 // create a function to check bottom left to top right
