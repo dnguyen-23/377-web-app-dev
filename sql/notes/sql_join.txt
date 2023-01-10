@@ -1,0 +1,26 @@
+SELECT - what rows to list in the result set
+FROM & JOIN - tells you what tables you are allowed to access and look at
+
+ON - tells you the condition on the JOIN statement
+    - Generally the ON statement is used for connecting the table to another table
+    -   by doing foreign primary key = current primary key by doing 
+    -   foreign.id  = current.foreign_column
+
+GROUP BY - tells you how to group the COUNT() performed
+    - Group counts by a specific field
+
+ORDER BY - order by the original names; NOT the alias
+    - NEVER HAVE COLUMN NAME THE SAME AS TABLE NAME; makes it very confusing
+
+
+***
+What's the difference between WHERE and HAVING?
+    - The different depends on when you want to apply the condition 
+    - with respect to GROUP BY
+
+    - WHERE is used before the GROUP BY
+    - WHERE is used on columns to filter out rows
+
+    - HAVING is used after the GROUP BY
+    - HAVING is used on groups made after GROUP BY
+

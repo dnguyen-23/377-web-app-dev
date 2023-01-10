@@ -1,0 +1,15 @@
+WHERE *boolean condition*
+--WHERE specifies a condition that you would use to determine
+what specifically you would like to pull out from the database
+
+SUM(column) from table
+--SUM will sum up the values from a specific column
+in a given table
+--therfore, the column name matters!!
+
+COUNT(*)
+--COUNT counts up the number of rows
+--you can assign a condition, but in the end
+it doesn't matter what you put into COUNT
+-- you'll end up having the same number of rows in your result set
+

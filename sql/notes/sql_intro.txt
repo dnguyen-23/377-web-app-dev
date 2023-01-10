@@ -1,0 +1,31 @@
+*SQL is not a programming language
+-sql is a querying language
+
+
+Databases : spreadsheets
+tables : tab
+row : row
+
+In a database:
+-every column represents an attribute
+-every row/record represents an entry
+-each table generally represents another entity (or class)
+
+Attributes:
+-each entity should have a primary key attribute (id attribute)
+-entities can also have foreign keys that represent relationship 
+with an entry from another entity
+
+Result set: set of rows returned from query by a SELECT statement
+Query: a command/request 
+
+"Statements" are made up of "clauses"
+-What's a clauses
+--clauses are basically commands, generally starting with a keyword
+
+ex. SELECT statement
+SELECT * FROM Person;
+clause 1.) SELECT *
+clause 2.) FROM Person
+
+*You should put each clause on its own line
