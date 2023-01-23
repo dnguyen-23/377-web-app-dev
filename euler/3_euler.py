@@ -7,3 +7,5 @@ while factor < cur:
     factor += 1
     
 print(cur)
+
+
