@@ -1,7 +1,7 @@
 
 finished = False
-for i in range(999, 101, -1):
-    for j in range(999, 101,-1):
+for i in range(999, 100, -1):
+    for j in range(999, 100,-1):
         prod = str(i * j)
         # print(prod)
         for x in range(len(prod) / 2):
@@ -17,3 +17,5 @@ for i in range(999, 101, -1):
             break
     if finished:
         break
+
+
